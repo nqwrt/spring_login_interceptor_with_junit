@@ -1,0 +1,32 @@
+/* 오라클 데이터베이스 sql 문
+
+-- 테이블 생성
+create table login (
+idx number(10) primary key,
+id varchar2(20) not null,
+pw varchar2(20) not null,
+name varchar2(20) not null,
+age number(4) not null,
+email varchar2(50) not null
+);
+
+-- 시퀀스 생성
+create SEQUENCE login_seq;
+
+-- admin 1111 등록
+insert into login values(login_seq.nextval, 'admin', '1111', 'admin', 30, 'admin@google.com');
+
+commit;
+
+-- 아이디 목록 확인
+select * from login;
+
+*/
+
+/*
+	로그인된 유저에게만 리스트를 보이게 하고 싶음.
+	1.jsp 파일자체에서 막는 방법
+	2.controller에서 막는 방법
+	
+	
+*/

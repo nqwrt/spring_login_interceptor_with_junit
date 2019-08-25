@@ -37,6 +37,7 @@ public class LogInController {
 	// 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest req,RedirectAttributes rttr) throws Exception {
+		
 		logger.info("post login");
 		 
 		 //Session 처리를 위한 Session 객체 HttpServletRequest 안에 있음
@@ -49,11 +50,20 @@ public class LogInController {
 		 
 		if(login == null) {
 		  session.setAttribute("member", null);
+		/*
+			Spring3 에서 제공하는 RedirectAttributes를 사용하면 
+			redirect post 구현이 가능합니다.
+	
+			하지만 일회성입니다. 
+			새로고침하면 날라가는 데이터이므로 사용목적에 따라서 사용/불가능 판단을 잘 하셔야 할거 같습니다.
+		 */
 		  rttr.addFlashAttribute("msg", false);
 		} else {
 		  session.setAttribute("member", login);
 		}
-		   
+		
+
+
 		return "redirect:/";
 	}
 

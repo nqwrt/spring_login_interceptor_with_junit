@@ -25,7 +25,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-<!--   404 에러(Page not found)가 나면 /로 보냄 -->
+<!--   404 에러(Page not found)가 나면 /로 보냄  -->
   <error-page>
   	<error-code>404</error-code>
   	<location>/</location>

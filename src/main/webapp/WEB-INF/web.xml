@@ -25,7 +25,13 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  	<filter>
+<!--   404 에러(Page not found)가 나면 /로 보냄 -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/</location>
+  </error-page>
+  
+  <filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>

@@ -23,6 +23,21 @@ select * from login;
 
 */
 
+
+[tomcat]이 설치된 디렉토리/conf/web.xml 에서 아래 부분을 편집
+단위는 분, 기본은 30분으로 설정되어 있음
+
+<session-config>
+<session-timeout>360</session-timeout>
+</session-config>
+
+** 세션 타임아웃 적용 우선순위
+
+1. 프로그램에 코딩된 session.setMaxInactiveInterval(int)
+2. 각 웹 어플리케이션의 WEB-INF/web.xml
+3. [tomcat설치디렉토리]/conf/web.xml
+
+
 /*
 	로그인된 유저에게만 리스트를 보이게 하고 싶음.
 	1.jsp 파일자체에서 막는 방법

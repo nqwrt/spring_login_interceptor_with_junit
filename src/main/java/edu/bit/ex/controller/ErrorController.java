@@ -39,7 +39,7 @@ public class ErrorController {
 	public String login(HttpServletRequest req,RedirectAttributes rttr) throws Exception {
 		
 		/*404 에러 발생시 처리할 내용이 있으면 처리를 시킴*/
-		
+		System.out.println("에러 처리 매핑 ");
 		return "error/error404";
 	}
 }

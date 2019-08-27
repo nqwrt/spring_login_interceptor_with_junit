@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -61,9 +62,6 @@ public class LogInController {
 		} else {
 		  session.setAttribute("member", login);
 		}
-		
-
-
 		return "redirect:/";
 	}
 
@@ -78,4 +76,24 @@ public class LogInController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/error_test")
+	public String error_test(HttpServletRequest req) throws Exception {
+		
+		logger.info("error_test");
+		 
+		MemberVO login = loginService.logInMember(null,null);
+		 
+	
+		return "redirect:/";
+	}
+
+	@ExceptionHandler(RuntimeException.class)
+	public String exceptionHandler(Model model, Exception e){
+
+		logger.info("exception : " + e.getMessage());
+		
+		model.addAttribute("exception", e);
+		return "error/exception";
+	}
+
 }

@@ -1,0 +1,21 @@
+에러
+
+
+페이지를 찾을 수 없거나 전달되는 파라미터가 잘 못된 경우 등 문제
+
+대표적인 에러
+
+200 OK
+400 bad reqeust
+404 not found
+500 Internal Server Error 
+
+더 많은 내용
+HTTP Status Codes : https://httpstatuses.com/
+
+에러처리 방법은 여러 방법이 있음
+
+위와 같은 http 상태에 따른 예외처리는 스프링에서 처리 하는 것보다는 
+web.xml에서 처리 하는게 더 나은 방법일 수 있음.
+
+

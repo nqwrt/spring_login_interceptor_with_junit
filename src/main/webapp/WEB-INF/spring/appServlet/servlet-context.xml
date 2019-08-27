@@ -30,7 +30,7 @@
 	<interceptors>
 	    <interceptor>
 	        <mapping path="/board/**"/>         
-	        <exclude-mapping path="/resources/**"/>
+	       <!--  <exclude-mapping path="/resources/**"/> -->
 	        <beans:ref bean="boardInterceptor"/>
 	    </interceptor>
 	</interceptors>

@@ -25,11 +25,23 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-<!--   404 에러(Page not found)가 나면 /로 보냄  -->
+<!--   404 에러(Page not found)가 나면 /(루트) 로 보냄  -->
   <error-page>
   	<error-code>404</error-code>
-  	<location>/</location>
+  	 	<location>/</location>
   </error-page>
+  
+<!-- <!--   404 에러(Page not found)가 나면  로 보냄  -->
+  <error-page>
+  	<error-code>404</error-code>
+  	 	<location>/error/404</location>
+  </error-page>
+  
+<!-- Error Page를 직접 다이렉트로 -->
+<!-- 	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/error/404error.jsp</location>
+	</error-page>  -->
   
   <filter>
 		<filter-name>encodingFilter</filter-name>

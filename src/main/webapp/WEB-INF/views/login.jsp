@@ -33,7 +33,7 @@
 	
 	<!-- <a href="member/modify">회원정보 수정</a>, <a href="member/withdrawal">회원탈퇴</a><br/> -->
 	<a href="board/list">게시판 리스트</a><br>
-	<a href="member/logout">로그아웃</a>
+	<a href="<%=path%>/member/logout">로그아웃</a>
 	
 </c:if>
 

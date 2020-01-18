@@ -1,12 +1,11 @@
 package edu.bit.ex.service;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
 import edu.bit.ex.vo.MemberVO;
+import edu.bit.ex.vo.UserVO;
 import edu.bit.mapper.LogInMapper;
 
 
@@ -20,5 +19,8 @@ public class LoginService {
 			return logInMapper.logInMember(id,pw) ;
    }
 	
+	public UserVO logInUser(String id,String pw)  {
+		return logInMapper.logInUser(id,pw) ;
+	}
 
 }

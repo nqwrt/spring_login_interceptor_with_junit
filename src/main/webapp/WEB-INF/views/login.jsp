@@ -29,7 +29,7 @@
 </c:if>
 
 <c:if test="${member != null}">
-	<p>${member.name}님 환영합니다.</p>
+	<p>${member.username}님 환영합니다.</p>
 	
 	<!-- <a href="member/modify">회원정보 수정</a>, <a href="member/withdrawal">회원탈퇴</a><br/> -->
 	<a href="board/list">게시판 리스트</a><br>

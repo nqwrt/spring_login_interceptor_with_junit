@@ -1,9 +1,5 @@
 package edu.bit.ex.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.bit.ex.service.LoginService;
 import edu.bit.ex.vo.MemberVO;
+import edu.bit.ex.vo.UserVO;
 
 /**
  * Handles requests for the application home page.
@@ -47,7 +44,11 @@ public class LogInController {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		 
-		MemberVO login = loginService.logInMember(id,pw);
+		//MemberVO login = loginService.logInMember(id,pw);
+		
+		UserVO login = loginService.logInUser(id,pw);
+		
+		
 		 
 		if(login == null) {
 		  session.setAttribute("member", null);
